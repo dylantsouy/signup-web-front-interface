@@ -34,6 +34,7 @@ export const registerApi = async (
   return response;
 };
 export const authLogin = async (username, password) => {
+  console.log(url);
   let response = await axios({
     url: `${url}/api/Accounts/Login`,
     method: "POST",
