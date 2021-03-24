@@ -1,0 +1,120 @@
+.login {
+  height: 100%;
+  display: flex;
+  height: 100%;
+  background: linear-gradient(rgb(75, 185, 185), rgb(237, 236, 254));
+  display: flex;
+  justify-content: space-between;
+
+  .input {
+    margin: 5px 0;
+  }
+
+  .inputArea {
+    width: 400px;
+    padding: 50px 30px;
+    margin: auto;
+    background: hsla(0, 0%, 100%, 0.75);
+    box-shadow: 0px 0px 5px #fff;
+    backdrop-filter: blur(20px);
+    flex-direction: column;
+    display: flex;
+    justify-content: space-between;
+  }
+  .forgetInputArea {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .forgetInputAreaInner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 140px 30px 100px;
+    background: hsla(0, 0%, 100%, 0.75);
+    box-shadow: 0px 0px 5px #fff;
+    backdrop-filter: blur(20px);
+  }
+  .passwordTitle {
+    font-size: 22px;
+    margin-bottom: 30px;
+    text-shadow: 0 0 3px #333;
+    font-weight: 600;
+    color: #fff;
+  }
+  .mainTitle {
+    font-size: 26px;
+    margin-bottom: 5px;
+    font-weight: 600;
+  }
+  .subTitle {
+    color: rgb(143, 155, 179);
+    font-size: 12px;
+    margin-bottom: 40px;
+  }
+  .forgetMainTitle {
+    font-size: 26px;
+    margin-bottom: 5px;
+    font-weight: 600;
+  }
+  .mainText {
+    display: flex;
+    justify-content: flex-end;
+    font-size: 14px;
+    cursor: pointer;
+    color: rgb(102, 114, 251);
+  }
+  label {
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    color: rgb(143, 155, 179);
+  }
+  .loginBtns {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .ant-input-prefix,
+  .ant-input {
+    color: #8f9bb3;
+  }
+  .ant-input-suffix {
+    color: #6672fb;
+  }
+  .button1 {
+    width: 48%;
+    margin: 20px 0;
+    padding: 15px 0;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    background: rgb(102, 114, 251);
+    color: #fff;
+  }
+  .button2 {
+    width: 48%;
+    margin: 20px 0;
+    padding: 15px 0;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    background: rgba(166, 162, 251, 0.2);
+    color: rgb(102, 114, 251);
+  }
+  .mainBottomPadding {
+    display: flex;
+    color: rgb(143, 155, 179);
+    justify-content: space-between;
+    margin: 0 15% 25px;
+    font-size: 12px;
+  }
+  .businessLink {
+    color: rgb(166, 162, 251);
+    cursor: pointer;
+  }
+}
