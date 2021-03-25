@@ -34,6 +34,11 @@ const Verify = () => {
         return;
       }
       if (res.data.returnCode === 2) {
+        noty("此帳號已經驗證過，請您直接登入");
+        history.push("/login");
+        return;
+      }
+      if (res.data.returnCode === 3) {
         noty("發生錯誤");
         history.push("/login");
         return;
@@ -42,7 +47,6 @@ const Verify = () => {
       history.push("/login");
     })
     .catch((error) => {
-      console.log(error.message);
       setLoading(false);
       noty("發生錯誤");
     });

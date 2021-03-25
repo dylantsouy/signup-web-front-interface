@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import { getUser } from "../apis/memberApi";
 import Loading from "../components/common/Loading";
@@ -14,13 +14,22 @@ import { noty } from "../helpers/noty";
 
 const Login = () => {
   const history = useHistory();
-  const { login } = useContext(AuthContext);
+  const { login, isAuthenticated } = useContext(AuthContext);
   const [password, setPassword] = useState("");
   const [account, setAccount] = useState("");
   const [openEye, setOpenEye] = useState(false);
   const [errorMessage, setError] = useState("");
   const [loading, setLoading] = useState(false);
 
+  useEffect(() => {
+    checkAuth();
+  });
+  const checkAuth = () => {
+    if (isAuthenticated) {
+      noty("您已登入，將為您導回首頁",'success');
+      history.push("/dashboard");
+    }
+  };
   const submitLogin = async () => {
     if (!account) {
       setError("請輸入帳號");
