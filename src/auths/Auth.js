@@ -27,7 +27,7 @@ export default function Auth({ children }) {
 
   const logout = async () => {
     // await authLogout();
-    noty("登出成功", false, "success");
+    noty("登出成功", "success");
     await localforage.clear();
     setIsAuthenticated(false);
   };
