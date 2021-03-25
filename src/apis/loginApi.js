@@ -45,7 +45,7 @@ export const authLogin = async (username, password) => {
       password,
     },
   });
-  await localforage.setItem("token", response.data);
+  await localforage.setItem("token", response.data.message);
   return response;
 };
 
