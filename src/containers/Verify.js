@@ -56,6 +56,7 @@ const Verify = () => {
       mounted.current = true;
       getUrlParams();
     }
+    return () => { mounted.current = false };
   });
   return (
     <div className="main">
