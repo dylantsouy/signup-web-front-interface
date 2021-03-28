@@ -1,6 +1,5 @@
 import React, { useState, useContext, useEffect } from "react";
 import { useHistory } from "react-router-dom";
-import { getUser } from "../apis/memberApi";
 import Loading from "../components/common/Loading";
 import { Input, Alert } from "antd";
 import {
@@ -10,7 +9,6 @@ import {
   KeyOutlined,
 } from "@ant-design/icons";
 import { AuthContext } from "../auths/Auth";
-import { noty } from "../helpers/noty";
 
 const Login = () => {
   const history = useHistory();
@@ -26,7 +24,6 @@ const Login = () => {
   });
   const checkAuth = () => {
     if (isAuthenticated) {
-      noty("您已登入，將為您導回首頁",'success');
       history.push("/dashboard");
     }
   };
@@ -38,31 +35,8 @@ const Login = () => {
       setError("請輸入密碼");
     }
     setLoading(true);
-    await login(account, password)
-      .then(async (res) => {
-        if (res.data.returnCode === 2) {
-          noty("此帳號尚未驗證");
-          setError();
-          setLoading(false);
-          return;
-        }
-        if (res.data.returnCode === 1) {
-          noty("帳號或密碼錯誤");
-          setError();
-          setLoading(false);
-          return;
-        }
-        await getUser(account).then(async (response) => {
-          console.log(response);
-          history.push("/dashboard");
-          noty("登入成功", "success");
-          setLoading(false);
-        });
-      })
-      .catch((err) => {
-        setLoading(false);
-        noty("登入失敗");
-      });
+    await login(account, password);
+    setLoading(false);
   };
 
   return (

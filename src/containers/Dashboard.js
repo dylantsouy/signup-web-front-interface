@@ -6,6 +6,7 @@ const Dashboard = () => {
     if (!mounted.current) {
       mounted.current = true;
     }
+    return () => { mounted.current = false };
   });
   return (
     <div>
